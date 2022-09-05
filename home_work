@@ -1,0 +1,22 @@
+# Задание 1
+# Создать программно файл в текстовом формате, записать в него построчно данные, вводимые пользователем.
+# Об окончании ввода данных свидетельствует пустая строка.
+
+my_file = open("L05task01.txt", "w+")
+line = input("Введите текст для первой строки файла >>> ")
+while line:
+    my_file.writelines(line)
+    line = input("Введите текст для следующей строки файла >>> ")
+my_file.close()
+
+my_file =open("L05task01.txt", "r")
+while True:
+    content = my_file.read()
+    print(content)
+    if not content:
+        break
+
+my_file.close()
+os.remove("L05task01.txt")
+
+# Задание 2
